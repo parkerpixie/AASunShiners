@@ -734,3 +734,112 @@ summary {
     margin-bottom: 10px;
   }
 }
+/* =========================================================
+   EMERGENCY SIDEBAR FIX
+   Works with current HTML: logo-wrap > nav.nav > sidebar-art
+   ========================================================= */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Keep logo/signup area from eating the sidebar */
+.logo-wrap {
+  flex: 0 0 auto;
+  padding: 6px 6px 10px;
+  margin-bottom: 8px;
+}
+
+/* Slightly smaller logo so the nav and photo have breathing room */
+.site-logo {
+  max-width: 230px;
+  margin-bottom: 8px;
+}
+
+/* Slightly smaller signup graphic */
+.leader-signup-image img {
+  max-width: 230px;
+}
+
+/* THIS is the important fix:
+   make the nav the scrollable middle section */
+.nav {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 10px 4px 10px 0;
+  margin-bottom: 12px;
+  border-top: 1px solid #f1ddad;
+  border-bottom: 1px solid #f1ddad;
+}
+
+/* Smaller nav items so more fit */
+.nav a {
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Make scrollbar slimmer and less ugly */
+.nav::-webkit-scrollbar {
+  width: 7px;
+}
+
+.nav::-webkit-scrollbar-track {
+  background: #fff7e8;
+  border-radius: 999px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: #a7a7a7;
+  border-radius: 999px;
+}
+
+.nav::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Protect the bottom image so it does not get swallowed */
+.sidebar-art {
+  flex: 0 0 auto;
+  margin-top: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #f1ddad;
+  box-shadow: 0 4px 14px rgba(18, 60, 105, 0.12);
+  background: #fff9ee;
+}
+
+/* Show the Fitchburg image as a full visible panel */
+.sidebar-art img {
+  display: block;
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Tablet/mobile reset */
+@media (max-width: 1100px) {
+  .sidebar {
+    height: auto;
+    overflow: visible;
+  }
+
+  .nav {
+    flex: none;
+    overflow: visible;
+    border-top: 1px solid #f1ddad;
+    border-bottom: 1px solid #f1ddad;
+  }
+
+  .sidebar-art {
+    display: none;
+  }
+}
