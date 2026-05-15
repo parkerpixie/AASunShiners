@@ -1,32 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SunShiners 7:30 AM Meeting Leader Dashboard</title>
-<style>
-:root{--navy:#113b63;--blue:#3f86c8;--sun:#f8b62d;--sun2:#d88600;--cream:#fff9ef;--paper:#fff;--border:#ecd7a7;--green:#eef9ed;--green2:#2d6d3d;--sky:#eaf6ff;--gray:#f3f3f3;--shadow:0 10px 28px rgba(17,59,99,.12);--r:18px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1f2933;background:radial-gradient(circle at top left,rgba(248,182,45,.22),transparent 34%),linear-gradient(180deg,#fffdf8,#fff7e8)}a{color:#0759a5;font-weight:700;word-break:break-word}.page{min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;padding:18px}.sidebar{position:sticky;top:18px;height:calc(100vh - 36px);background:rgba(255,249,239,.97);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 12px;display:flex;flex-direction:column;overflow:hidden}.logo{text-align:center;border-bottom:1px solid #f1ddad;padding:8px 6px 16px;margin-bottom:12px}.sun{width:84px;height:54px;margin:auto;position:relative}.sun:before{content:"";position:absolute;left:19px;top:10px;width:46px;height:46px;border-radius:50%;background:linear-gradient(#ffe08a,#f6ad25);box-shadow:0 0 0 8px rgba(248,183,46,.15)}.sun:after{content:"";position:absolute;left:5px;right:5px;bottom:2px;height:12px;border-radius:999px;background:linear-gradient(90deg,transparent,#95cbe0,#5aa5c8,#95cbe0,transparent)}.logo-text{font-family:Georgia,serif;font-style:italic;font-size:33px;color:#ed9d22}.nav{display:grid;gap:5px;overflow:auto;padding-right:3px}.nav a{display:flex;gap:10px;align-items:center;text-decoration:none;color:#1e2b37;padding:10px 11px;border-radius:11px;font-weight:800;font-size:15px}.nav a:hover,.nav a.active{background:#e8f3ff;color:var(--navy)}.art{margin-top:auto;height:150px;border-radius:14px;border:1px solid #f1ddad;background:radial-gradient(circle at 40% 36%,#ffd96c 0 20%,transparent 21%),linear-gradient(165deg,transparent 0 50%,rgba(74,143,97,.45) 51% 68%,rgba(65,126,89,.82) 69%),linear-gradient(145deg,transparent 0 43%,rgba(99,157,121,.42) 44% 63%,rgba(73,132,96,.76) 64%),linear-gradient(180deg,#fff3c8,#dceefb 62%,#b9d8c3)}.hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:rgba(255,255,255,.82);border:1px solid #f1ddad;border-radius:var(--r);box-shadow:var(--shadow);padding:20px 26px;margin-bottom:18px}h1{margin:0;color:var(--navy);font-size:clamp(28px,3.1vw,43px);line-height:1.04;letter-spacing:-.035em}.subtitle{color:var(--blue);font-style:italic;font-size:21px;margin-top:8px;display:flex;gap:12px;align-items:center}.subtitle:before,.subtitle:after{content:"";width:52px;height:2px;background:#9fb9d1}.hope{border:1px solid #f1cd83;background:#fff7e8;border-radius:15px;padding:14px 18px;color:var(--navy);max-width:270px;display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;font-style:italic;font-weight:800}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.95fr);gap:14px;align-items:start}.stack{display:grid;gap:10px}.card{border:1px solid var(--border);background:rgba(255,255,255,.92);border-radius:15px;overflow:hidden;box-shadow:0 4px 14px rgba(17,59,99,.08);scroll-margin-top:22px}.script{display:grid;grid-template-columns:145px 1fr}.label{display:grid;grid-template-columns:50px 1fr;gap:9px;align-items:center;padding:13px;background:#fff4d5;color:var(--sun2);font-weight:900;text-transform:uppercase;letter-spacing:.02em}.label.note{background:var(--gray);color:#555}.label.do{background:var(--sky);color:#1f67a9}.label.copy{background:var(--green);color:var(--green2)}.label.link{background:#f4ecff;color:#634293}.ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;background:linear-gradient(#ffc845,#f0a800);color:white;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}.note .ico{background:linear-gradient(#9a9a9a,#626262)}.do .ico{background:linear-gradient(#6ca3d8,#2d74b8)}.copy .ico{background:linear-gradient(#70a56f,#3d7b42)}.link .ico{background:linear-gradient(#a385d6,#7350aa)}.content{padding:14px 18px}h2,h3{margin:0 0 8px;color:#17212b}h2{font-size:20px}h3{font-size:18px}p{margin:0 0 8px;line-height:1.45}p:last-child{margin-bottom:0}ul,ol{margin:8px 0 0 20px;padding:0;line-height:1.6}.prayer{font-style:italic;color:#1c2f3e}.tiny{font-size:13px;color:#6e7379}.two{display:grid;grid-template-columns:1fr 1.08fr;gap:8px}.row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.btn,.jump{border:1px solid #7fb17d;background:#f6fff5;color:var(--green2);padding:10px 14px;border-radius:12px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;gap:8px;align-items:center;white-space:nowrap}.jump{border-color:#c8d9ef;background:#f4f9ff;color:#2267a8}.jump.orange{border-color:#ffc869;color:#c97800;background:#fff8ed}.copybox{border-color:#b8dcb7;background:linear-gradient(#f6fff4,#effced)}.copyhead{display:flex;justify-content:space-between;align-items:start;gap:14px;padding:14px 16px 0}.copytitle{display:grid;grid-template-columns:50px 1fr;gap:12px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.04em;color:var(--green2);font-weight:900;font-size:13px}.copybody{padding:12px 22px 18px}.zoom{border-color:#c8d9ef;background:linear-gradient(#f7fbff,#edf6ff)}.links{border-color:#dec8f6;background:linear-gradient(#fbf7ff,#f5eeff)}details{border:1px solid #d8e7f5;background:#f7fbff;border-radius:12px;margin-top:10px;overflow:hidden}summary{cursor:pointer;padding:11px 13px;font-weight:900;color:var(--navy)}.details-body{padding:0 14px 14px}.footer{margin-top:12px;border:1px solid #f1ddad;border-radius:14px;background:rgba(255,249,238,.94);padding:13px 20px;display:flex;justify-content:center;gap:30px;color:#936111;font-style:italic;box-shadow:var(--shadow)}.toast{position:fixed;right:22px;bottom:22px;background:var(--navy);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);transform:translateY(120px);opacity:0;transition:.25s;font-weight:800;z-index:20}.toast.show{transform:translateY(0);opacity:1}@media(max-width:1120px){.page{grid-template-columns:1fr}.sidebar{position:static;height:auto}.nav{grid-template-columns:repeat(2,1fr)}.art{display:none}.layout{grid-template-columns:1fr}}@media(max-width:720px){.page{padding:10px}.hero{grid-template-columns:1fr;padding:18px}.hope{max-width:none}.script,.two{grid-template-columns:1fr}.label{grid-template-columns:44px 1fr}.ico{width:42px;height:42px}.nav{grid-template-columns:1fr}.copyhead{display:grid}.row{grid-template-columns:1fr}.btn,.jump{width:100%;justify-content:center}.footer{flex-direction:column;gap:6px;text-align:center}}@media print{.sidebar,.btn,.toast,.jump{display:none!important}.page,.layout,.script,.two{display:block}.hero,.card,.footer{box-shadow:none;break-inside:avoid}.card{margin-bottom:10px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SunShiners 7:30 AM Meeting Leader Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="page">
-<aside class="sidebar">
-  <div class="logo"><div class="sun"></div><div class="logo-text">SunShiners</div></div>
-  <nav class="nav" aria-label="Meeting leader navigation">
-    <a href="#start" class="active">🏠 Start Here</a><a href="#before">📝 Before Meeting</a><a href="#opening">🌅 Opening</a><a href="#preamble">📖 Preamble</a><a href="#newcomers">👥 Newcomers</a><a href="#chapter5">📚 Chapter 5</a><a href="#chat1">💬 Chat Part 1</a><a href="#chat2">💬 Chat Part 2</a><a href="#reflection">⭐ Reflection</a><a href="#announcements">📣 AA Announcements</a><a href="#milestones">🏅 Milestones</a><a href="#sharing">🗣️ Topic & Sharing</a><a href="#closing">🌄 Closing</a><a href="#links">🔗 Reflection Links</a><a href="#zoomhelp">❔ Zoom Help</a>
-  </nav>
-  <div class="art" aria-hidden="true"></div>
-</aside>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="sun" aria-hidden="true"></div>
+        <div class="logo-text">SunShiners</div>
+        <div class="logo-subtitle">7:30 AM Online AA</div>
+      </div>
 
-<main>
-<header class="hero"><div><h1>SunShiners 7:30 AM Meeting Leader Dashboard</h1><div class="subtitle">Easy Leader Version</div></div><div class="hope"><span style="font-size:34px">☀️</span><span>Thank you for carrying the message of hope and recovery.</span></div></header>
+      <nav class="nav" aria-label="Meeting leader navigation">
+        <a href="#start" class="active">🏠 Start Here</a>
+        <a href="#before">📝 Before Meeting</a>
+        <a href="#opening">🌅 Opening</a>
+        <a href="#preamble">📖 Preamble</a>
+        <a href="#newcomers">👥 Newcomers</a>
+        <a href="#chapter5">📚 Chapter 5</a>
+        <a href="#chat1">💬 Chat Part 1</a>
+        <a href="#chat2">💬 Chat Part 2</a>
+        <a href="#reflection">⭐ Reflection</a>
+        <a href="#announcements">📣 Announcements</a>
+        <a href="#milestones">🏅 Milestones</a>
+        <a href="#sharing">🗣️ Topic & Sharing</a>
+        <a href="#closing">🌄 Closing</a>
+        <a href="#links">🔗 Reflection Links</a>
+        <a href="#zoomhelp">❔ Zoom Help</a>
+      </nav>
 
-<section class="layout">
-<div class="stack">
-  <article id="start" class="card script"><div class="label note"><div class="ico">📝</div><div>Note</div></div><div class="content"><h2>How to Use This Dashboard</h2><p><strong>SAY</strong> means read this out loud.</p><p><strong>DO</strong> means leader directions only. Do not read out loud.</p><p><strong>COPY TO CHAT</strong> means use the copy button and paste into Zoom chat.</p><p><strong>NOTE</strong> means helpful reminder or tech tip.</p></div></article>
+      <div class="sidebar-art" aria-hidden="true"></div>
+    </aside>
 
-  <article id="before" class="card script"><div class="label do"><div class="ico">✅</div><div>Do</div></div><div class="content"><h2>Before the Meeting Starts</h2><p>Have these pages open before the meeting begins:</p><ol><li>This leader dashboard.</li><li><a href="https://www.aa.org/sites/default/files/2021-11/en_bigbook_chapt5.pdf" target="_blank" rel="noopener">Chapter 5, How It Works</a>, in case someone else cannot read or you need to paste the link in chat.</li><li><a href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener">AA Daily Reflections</a>, so you can copy and paste the day’s reflection link.</li></ol><p class="tiny">You do not need to claim host or ask for readers before the meeting starts. Those happen during the meeting.</p></div></article>
+    <main class="main">
+      <header class="hero">
+        <div>
+          <h1>SunShiners 7:30 AM Meeting Leader Dashboard</h1>
+          <div class="subtitle">Easy Leader Version</div>
+        </div>
 
-  <article id="opening" class="card script"><div class="label"><div class="ico">💬</div><div>Say</div></div><div class="content"><h2>1. Welcome</h2><p>Good morning, welcome to the 7:30 am SunShiners meeting of AA. I am ______ and I’m an alcoholic, or however you choose to introduce yourself.</p><p>Let’s begin with a moment of silence for the still suffering alcoholic, followed by the Serenity Prayer.</p><p class="prayer"><strong>Opening Serenity Prayer, I Form</strong><br>God, grant me the serenity to accept the things I cannot change,<br>the courage to change the things I can,<br>and the wisdom to know the difference.</p></div></article>
+        <div class="hope-card">
+          <span class="hope-icon">☀️</span>
+          <span>Thank you for carrying the message of hope and recovery.</span>
+        </div>
+      </header>
 
-  <article id="preamble" class="card script"><div class="label"><div class="ico">💬</div><div>Say</div></div><div class="content"><h2>2. Preamble</h2><p>Alcoholics Anonymous is a fellowship of people who share their experience, strength, and hope with each other that they may solve their common problem and help others to recover from alcoholism.</p><p>The only requirement for membership is a desire to stop drinking.
+      <section class="layout">
+        <div class="stack">
+          <article id="start" class="card script-card">
+            <div class="label note">
+              <div class="icon-box">📝</div>
+              <div>Note</div>
+            </div>
+
+            <div class="content">
+              <h2>How to Use This Dashboard</h2>
+              <p><strong>SAY</strong> means read this out loud.</p>
+              <p><strong>DO</strong> means leader directions only. Do not read out loud.</p>
+              <p><strong>COPY TO CHAT</strong> means use the copy button and paste into Zoom chat.</p>
+              <p><strong>NOTE</strong> means helpful reminder or tech tip.</p>
+
+              <div class="badge-row">
+                <span class="badge">☀️ One day at a time</span>
+                <span class="badge">📋 Copy buttons included</span>
+                <span class="badge">🧭 Follow top to bottom</span>
+              </div>
+            </div>
+          </article>
+
+          <article id="before" class="card script-card">
+            <div class="label do">
+              <div class="icon-box">✅</div>
+              <div>Do</div>
+            </div>
+
+            <div class="content">
+              <h2>Before the Meeting Starts</h2>
+              <p>Have these pages open before the meeting begins:</p>
+
+              <ol>
+                <li>This leader dashboard.</li>
+                <li>
+                  <a href="https://www.aa.org/sites/default/files/2021-11/en_bigbook_chapt5.pdf" target="_blank" rel="noopener">
+                    Chapter 5 - How It Works
+                  </a>,
+                  in case someone else cannot read or you need to paste the link in chat.
+                </li>
+                <li>
+                  <a href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener">
+                    AA Daily Reflections
+                  </a>,
+                  so you can copy and paste the day’s reflection link.
+                </li>
+              </ol>
+
+              <p class="tiny">You do not need to claim host or ask for readers before the meeting starts. Those happen during the meeting.</p>
+            </div>
+          </article>
+
+          <article id="opening" class="card script-card">
+            <div class="label say">
+              <div class="icon-box">💬</div>
+              <div>Say</div>
+            </div>
+
+            <div class="content">
+              <h2>1. Welcome</h2>
+              <p>Good morning, welcome to the 7:30 am SunShiners meeting of AA. I am ______ and I’m an alcoholic, or however you choose to introduce yourself.</p>
+              <p>Let’s begin with a moment of silence for the still suffering alcoholic, followed by the Serenity Prayer.</p>
+
+              <p class="prayer">
+                <strong>Opening Serenity Prayer, I Form</strong><br />
+                God, grant me the serenity to accept the things I cannot change,<br />
+                the courage to change the things I can,<br />
+                and the wisdom to know the difference.
+              </p>
+            </div>
+          </article>
+
+          <article id="preamble" class="card script-card">
+            <div class="label say">
+              <div class="icon-box">💬</div>
+              <div>Say</div>
+            </div>
+
+            <div class="content">
+              <h2>2. Preamble</h2>
+              <p>Alcoholics Anonymous is a fellowship of people who share their experience, strength, and hope with each other that they may solve their common problem and help others to recover from alcoholism.</p>
+              <p>The only requirement for membership is a desire to stop
