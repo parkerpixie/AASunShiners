@@ -64,17 +64,18 @@ a {
 }
 
 .logo-wrap {
+  flex: 0 0 auto;
   text-align: center;
   padding: 8px 6px 14px;
   border-bottom: 1px solid #f1ddad;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .logo-wrap a {
   text-decoration: none;
 }
 
-/* New uploaded logo image */
+/* Uploaded long logo image */
 .site-logo {
   display: block;
   width: 100%;
@@ -143,11 +144,40 @@ a {
   line-height: 1;
 }
 
+/* Sidebar nav scroll container */
+.nav-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 430px;
+  overflow-y: auto;
+  padding: 10px 4px 10px 0;
+  margin-bottom: 12px;
+  border-top: 1px solid #f1ddad;
+  border-bottom: 1px solid #f1ddad;
+}
+
+/* Scrollbar styling */
+.nav-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nav-scroll::-webkit-scrollbar-track {
+  background: #fff7e8;
+  border-radius: 999px;
+}
+
+.nav-scroll::-webkit-scrollbar-thumb {
+  background: #b9b9b9;
+  border-radius: 999px;
+}
+
+.nav-scroll::-webkit-scrollbar-thumb:hover {
+  background: #8f8f8f;
+}
+
 .nav {
   display: grid;
   gap: 6px;
-  overflow: auto;
-  padding-right: 3px;
 }
 
 .nav a {
@@ -156,7 +186,7 @@ a {
   gap: 10px;
   text-decoration: none;
   color: #1e2b37;
-  padding: 10px 11px;
+  padding: 9px 10px;
   border-radius: 11px;
   font-weight: 800;
   font-size: 14px;
@@ -168,10 +198,10 @@ a {
   color: var(--navy);
 }
 
-/* New real Fitchburg Serenity Club image */
+/* Fitchburg Serenity Club image */
 .sidebar-art {
-  margin-top: auto;
-  border-radius: 13px;
+  flex: 0 0 auto;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid #f1ddad;
   box-shadow: 0 4px 14px rgba(18, 60, 105, 0.12);
@@ -181,9 +211,9 @@ a {
 .sidebar-art img {
   display: block;
   width: 100%;
-  height: 165px;
+  height: 120px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 45%;
 }
 
 .main {
@@ -515,6 +545,34 @@ summary {
   padding: 0 14px 14px;
 }
 
+/* Host code callout */
+.host-code-box {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 2px dashed #6ca3d8;
+  border-radius: 12px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 3px 10px rgba(18, 60, 105, 0.08);
+}
+
+.host-code-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1f67a9;
+  font-weight: 900;
+}
+
+.host-code {
+  font-size: 24px;
+  color: #123c69;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
 .footer {
   margin-top: 12px;
   border: 1px solid #f1ddad;
@@ -560,6 +618,13 @@ summary {
   .sidebar {
     position: static;
     height: auto;
+  }
+
+  .nav-scroll {
+    max-height: none;
+    overflow: visible;
+    border-top: 1px solid #f1ddad;
+    border-bottom: 1px solid #f1ddad;
   }
 
   .nav {
@@ -627,6 +692,12 @@ summary {
   .jump,
   .copy-button {
     width: 100%;
+  }
+
+  .host-code-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .footer {
